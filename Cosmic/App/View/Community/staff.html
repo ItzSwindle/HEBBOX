@@ -7,14 +7,22 @@
                 {{locale.desc}}
             </div>
         </header>
-
+	<nav class="navigation1-container">
+		<ul class="navigation1-menu flex-container">
+					<li class="navigation1-item"><a href="/community/coordinators">Coordinadores</a></li>
+					<li class="navigation1-item"><a href="/community/dptsm">Dpto. de Soporte y Moderación</a></li>
+					<li class="navigation1-item"><a href="/community/ibaw">Dpto. de Ingenieria BaW</a></li>
+					<li class="navigation1-item"><a href="/community/mk">Dpto de Diseño y Marketing</a></li>
+					<li class="navigation1-item"><a href="/community/gm">Dpto. Entrenimiento</a></li>
+					<li class="navigation1-item"><a href="/community/eco">Dpto de Economía</a></li>
+		</ul>
+	</nav>
         <div class="page-content">
             <div class="left-side">
                 {% for employee in data %}
                 {% if employee.users is not empty %}
                 <article class="default-section">
                       <div class="aside-title-content">{{employee.rank_name}}</div>
-                      {% if action == "team" %}<div class="aside-desc-content">{{employee.rank_description}}</div>{% endif %}
                       <div class="aside-content">
 
                       <div class="members-container">
@@ -27,7 +35,8 @@
                                   <div class="member-details">
                                       <div class="details-username">{{user.username}}</div>
                                       <div class="details-function">{{user.settings.role}}</div>
-                                      <div class="details-motto">{{user.motto}}</div>
+                                      <div class="details-motto"><b>Misión:</b> {{user.motto}}</div>
+									  <div class="aside-desc-content">{{user.tarea}}</div>
                                   </div>
                                   <div class="member-status flex-container flex-vertical-center flex-horizontal-center">
                                       <span class="status-icon {% if user.settings.hide_online == 0 %}{% if user.online %}online{% endif %}{% endif %}"></span>

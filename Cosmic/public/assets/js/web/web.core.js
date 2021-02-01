@@ -137,6 +137,15 @@ function WebInterface() {
                 removalDelay: 300,
                 mainClass: "my-mfp-zoom-in"
             });
+			}).on("click", ".about-download-button", function () {
+            $.magnificPopup.open({
+                items: {
+                    type: "inline",
+                    src: "#about-download"
+                },
+                removalDelay: 300,
+                mainClass: "my-mfp-zoom-in"
+            });
         }).on("click", "[data-close-popup = 'true']", function () {
             $.magnificPopup.close();
 

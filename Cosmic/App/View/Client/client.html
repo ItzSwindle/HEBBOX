@@ -31,7 +31,7 @@
           "furnidata.load.url": "{{site.cpath}}/{{client.external_figuredata}}",
           "sso.ticket": "{{data.auth_ticket}}",
           "account_id": "{{player.id}}",
-          "client.starting": "Hotel starting..",
+          "client.starting": "Hebbox Hotel esta cargando...",
           "ads.domain": "",
           "processlog.enabled": "0",
           "flash.client.url": "{{site.cpath}}/{{client.external_base}}/",
@@ -65,7 +65,7 @@
         swfobject.embedSWF('{{site.cpath}}/{{client.external_base}}/{{client.client_swf}}', 'flash-container', '100%', '100%', '11.1.0', '{{path}}/assets/flash/expressInstall.swf', flashvars, params, null, null);
     </script>
 
-    <style>body{margin:0;background:#000;color:#7ecaee;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font-family:Ubuntu,"Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;font-size:16px;font-variant-ligatures:common-ligatures;line-height:1.4;min-height:100vh;}.client-error{max-width:480px;}.client-error__title{text-align:center;}.client-error__flash{background-image:url('/web/client/flash/flashplayer.png');display:inline-block;height:39px;margin:12px 12px 0;width:158px;}h1,h2,h3,h4,h5,h6{color:#fff;font-family:"Ubuntu Condensed","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;font-weight:400;margin:.6em 0;line-height:1.2;}h1,h2,h3,h4,h5{text-transform:uppercase;}p{margin:.75em 0;}a{color:#fff;cursor:pointer;outline:0;text-decoration:none;}</style>
+      <style>body{margin:0;background:#000;color:#7ecaee;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font-family:Ubuntu,"Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;font-size:16px;font-variant-ligatures:common-ligatures;line-height:1.4;min-height:100vh;}.client-error{max-width:480px;}.client-error__title{text-align:center;}.client-error__flash{background-image:url('/web/client/flash/flashplayer.png');display:inline-block;height:39px;margin:12px 12px 0;width:158px;}h1,h2,h3,h4,h5,h6{color:#fff;font-family:"Ubuntu Condensed","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;font-weight:400;margin:.6em 0;line-height:1.2;}h1,h2,h3,h4,h5{text-transform:uppercase;}p{margin:.75em 0;}a{color:#fff;cursor:pointer;outline:0;text-decoration:none;}</style>
 </head>
 
 <body id="client" class="flashclient">
@@ -80,16 +80,16 @@
                     <div style="margin-top:170px;">
                         <div class="client-error__background-frank" ng-if="!ClientErrorController.mobile">
                             <span class="client-error__text-contents">
-                                <h1 class="client-error__title" translate="CLIENT_ERROR_TITLE">Je bent bijna in {{hotelname}}!</h1>
-                                <p translate="CLIENT_ERROR_FLASH"><b>LET OP GOOGLE CHROME USERS</b>! Voordat je {{hotelname}} speelt, zul je Flash Player handmatig moeten aanzetten in de instellingen van je browser. <a href="{{path}}/article/90-activeer-flash-player-in-google-chrome" target="_blank">Lees ons recente nieuwsbericht</a> om te zien hoe je dit precies moet doen.  Nadat Flash is ingeschakeld, klik je op de gele Hotel knop hieronder en vervolgens klik je op "Flash uitvoeren" waarneer hier om gevraagd wordt!</p>
-                            </span>
+                                <h1 class="client-error__title" translate="CLIENT_ERROR_TITLE">¡Ya casi estás en {{hotelname}}!</h1>
+                                <p translate="CLIENT_ERROR_FLASH"><b>¡TENGA EN CUENTA A LOS USUARIOS DE GOOGLE CHROME!</b> Antes de jugar a {{hotelname}}, deberá habilitar Flash Player manualmente en la configuración de su navegador. <a href="{{path}}/article/90-activeer-flash-player-in-google-chrome" target="_blank">Lea nuestro artículo de noticias reciente </a> para saber cómo hacer esto exactamente. Después de que Flash esté habilitado, haga clic en el botón amarillo Hotel a continuación y luego haga clic en "Ejecutar Flash" cuando se le solicite. </p>
+								</span>
                             <div class="client-error__hotel-button-div">
                                 <a ng-href="http://www.adobe.com/go/getflashplayer" target="_blank" rel="noopener noreferrer" class="hotel-button" href="http://www.adobe.com/go/getflashplayer">
                                     <span class="hotel-button__text" translate="NAVIGATION_HOTEL">Hotel</span>
                                 </a>
                             </div>
                             <div class="client-error__mobile">
-                                <p translate="CLIENT_ERROR_MOBILE">Als je op een iPad, iPhone of een Android-apparaat bent, kun je <a href="https://itunes.apple.com/nl/app/puffin-web-browser/id472937654?mt=8">Puffin</a> downloaden in de App Store of <a href="https://play.google.com/store/apps/details?id=com.cloudmosa.puffinFree&hl=nl">Puffin</a> op Google Play.</p>
+                                <p translate="CLIENT_ERROR_MOBILE">Si está en un iPad, iPhone o un dispositivo Android, puede <a href="https://itunes.apple.com/nl/app/puffin-web-browser/id472937654?mt=8">Puffin</a> descargar de la App Store o <a href="https://play.google.com/store/apps/details?id=com.cloudmosa.puffinFree&hl=nl">Puffin</a> en Google Play.</p>
 
                                 <div class="client-error__downloads">
                                     <a ng-href="https://itunes.apple.com/nl/app/puffin-web-browser/id472937654?mt=8" target="_blank" rel="noopener noreferrer" class="client-error__appstore" href="https://itunes.apple.com/nl/app/puffin-web-browser/id472937654?mt=8"></a>
@@ -104,9 +104,8 @@
                 $('#content').show();
             </script>
         </div>
+		<iframe id="page-content" class="hidden" allowtransparency="true" frameBorder="0" src="about:blank"></iframe>
     </div>
 
-    <iframe id="page-content" class="hidden" allowtransparency="true" frameBorder="0" src="about:blank"></iframe>
-</div>
 </body>
 </html>

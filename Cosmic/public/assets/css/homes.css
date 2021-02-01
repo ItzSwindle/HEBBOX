@@ -1073,6 +1073,12 @@ a.new-button b {
     left: -1500px;
     top: 0;
 }
+#guestbook-form-download, #guestbook-delete-download {
+	width: 300px;
+    position: absolute;
+    left: -1500px;
+    top: 0;
+}
 #guestbook-form {
 	margin: 0;
 	padding: 0;

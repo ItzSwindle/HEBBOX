@@ -12,7 +12,7 @@ use PDO;
 
 class Player
 {
-    private static $data = array('id','username','password','real_name','mail','account_created','account_day_of_birth','last_login','online','pincode','last_online','motto','look','gender','rank','credits','pixels','points','auth_ticket','ip_register','ip_current','machine_id', 'secret_key', 'extra_rank', 'template');
+    private static $data = array('id','username','password','real_name','mail','account_created','account_day_of_birth','last_login','online','pincode','last_online','motto','look','gender','rank','credits','pixels','points','auth_ticket','ip_register','ip_current','machine_id', 'secret_key', 'extra_rank', 'template', 'tarea');
 
     public static function getAllUsers($data = null)
     {
@@ -41,13 +41,13 @@ class Player
 
     public static function getDataByRank($rank, $limit = 10)
     {
-        return  QueryBuilder::table('users')->select(['id','username','online','look', 'motto'])->setFetchMode(PDO::FETCH_CLASS, get_called_class())
+        return  QueryBuilder::table('users')->select(['id','username','online','look', 'motto', 'tarea'])->setFetchMode(PDO::FETCH_CLASS, get_called_class())
             ->where('rank', $rank)->orderBy('online', 'desc')->get();
     }
   
     public static function getByExtraRank($extra_rank)
     {
-        return QueryBuilder::table('users')->select(['id','username','online','look', 'motto'])->where('extra_rank', $extra_rank)->get();
+        return QueryBuilder::table('users')->select(['id','username','online','look', 'motto', 'tarea'])->where('extra_rank', $extra_rank)->get();
     }
   
     public static function checkMaxIp($ip_address)
@@ -108,8 +108,8 @@ class Player
             'account_day_of_birth' => strtotime($data->birthdate_day . '-' . $data->birthdate_month . '-' . $data->birthdate_year),
             'gender' => $data->gender == 'male' ? 'M' : 'F',
             'last_login' => time(),
-            'ip_register' => request()->getIp(),
-            'ip_current' => request()->getIp()
+            'ip_register' => getIpAddress(),
+            'ip_current' => getIpAddress()
         );
 
         $user_id = QueryBuilder::table('users')->setFetchMode(PDO::FETCH_CLASS, get_called_class())->insert($data);

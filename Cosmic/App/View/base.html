@@ -1,6 +1,6 @@
 {% extends "permissions.html" %}{% set set_permission = 'homepage' %}{% block base %}{% if load is not defined %}
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="ES">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="/assets/css/homes.css">
     <link rel="stylesheet" href="/assets/css/selectric.css">
     <link rel="stylesheet" href="/assets/css/circle.css?v=5">
-    <link rel="stylesheet" href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v=2">
+    <link rel="stylesheet" href="/assets/css/web.{% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}.css?v=3">
     <link rel="stylesheet" href="/assets/css/web.responsive.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -120,18 +120,35 @@
 
         <h5>{{locale_base.and_all}} {{site.shortname}}'s ♥</h5>
     </div>
+	<div id="about-download" class="login-popup zoom-anim-dialog mfp-hide">
+<h1 class="aside-title">Descargas</h1>
+<p>Estas son las APP's oficiales de Hebbox Hotel!
+<br>
+<h5>APP Windows x64</h5>
+<a href="//hebbox.es/hebbox64.zip" target="_blank">Descargar</a>
+<br>
+<h5>APP Windows x32</h5>
+<a href="//hebbox.es/hebbox32.zip" target="_blank">Descargar</a>
+<br>
+<h5>APP MAC</h5>
+<a href="#" target="_blank">Pronto</a>
+<br>
+<h5>APP Android</h5>
+<a href="#" target="_blank">Pronto</a>
+</p>
+</div>
 
     {% if player is empty %}
     <div id="login-dialog" class="login-popup zoom-anim-dialog mfp-hide">
-        <h3 class="aside-title">Log in {{site.sitename}}</h3>
+        <h3 class="aside-title">Iniciar sesión {{site.sitename}}</h3>
         <div class="login-form">
             <label for="login-username-input-target" class="username-input">
-                <input type="text" name="username" class="rounded-input blue-active" id="login-username-input-target"
-                    placeholder="{{site.shortname}}{{locale_base.login_name}}..." required>
+                <input type="text" name="username" class="rounded-input red-active" id="login-username-input-target"
+                    placeholder="{{site.shortname}} {{locale_base.login_name}}..." required>
                 <i class="flaticon-user-1"></i>
             </label>
             <label for="login-password-input-target" class="password-input">
-                <input type="password" name="password" class="rounded-input blue-active"
+                <input type="password" name="password" class="rounded-input red-active"
                     id="login-password-input-target" placeholder="{{locale_base.login_password}}..." autocomplete="off"
                     required>
                 <i class="flaticon-padlock"></i>
@@ -139,7 +156,7 @@
             <input type="hidden" name="csrftoken" value="{{csrf_token}}" />
             <a href="password/claim" class="claim-password" data-close-popup="true"
                 style="margin-top:1px">{{locale_base.login_lost_password}}</a>
-            <button type="submit" class="rounded-button blue plain" id="login-request">Log in</button>
+            <button type="submit" class="rounded-button red plain" id="login-request">Iniciar Sesión</button>
         </div>
     </div>
     {% endif %}
@@ -153,7 +170,7 @@
         <form action="/ajax/report/add" method="post" class="login-form" id="reportForm">
 
             <p>
-                <button type="submit" class="rounded-button blue plain"
+                <button type="submit" class="rounded-button red plain"
                     id="reportItem">{{locale_base.report_inappropriate}}</button>
                 <input type="hidden" id="reportItemid" name="itemId" value="">
             </p>
@@ -161,10 +178,9 @@
     </div>
     {% endif %}
 
-    <header class="header-container pixelated is-small">
+    <header class="header-container pixelated is-small" style="background: url(/assets/images/header_summer.png) center center no-repeat rgb(191, 12, 12);">
         <div class="header-content"> 
-            <div class="logo"><a href="/home"><img src="https://habbofont.net/font/hma/{{site.shortname}}.gif"
-                        style="margin-top: 30px;"></a></div>
+            <div class="logo"><a href="/home"><img src="/assets/images/web/header/hebbox.png" style="margin-top: -50px;"></a></div>
             <div class="account-container">
                 <div class="account-title">
                     {{locale_base.header_slogan2}}
@@ -193,10 +209,10 @@
                 <a href="/articles">{{locale_base.nav_community}}</a>
                 <ul class="navigation-submenu">
                     <li class="navigation-subitem"><a href="/articles">{{locale_base.nav_news}}</a></li>
-                    <li class="navigation-subitem"><a href="/jobs">{{locale_base.nav_jobs}}</a></li>
-                    <li class="navigation-subitem"><a href="/community/photos">{{locale_base.nav_photos}}</a></li>
+                  <!--  <li class="navigation-subitem"><a href="/jobs">{{locale_base.nav_jobs}}</a></li> -->
+                  <!-- <li class="navigation-subitem"><a href="/community/photos">{{locale_base.nav_photos}}</a></li> -->
                     <li class="navigation-subitem"><a href="/community/staff">{{site.shortname}} {{locale_base.nav_staff}}</a></li>
-                    <li class="navigation-subitem"><a href="/community/team">{{site.shortname}} {{locale_base.nav_team}}</a></li>
+                   <!--  <li class="navigation-subitem"><a href="/community/team">{{site.shortname}} Equipo</a></li> -->
                 </ul>
             </li>
 
@@ -213,6 +229,7 @@
                 </ul>
             </li>
             {% endif %}
+			<li class="navigation-item"><a href="/community/photos">{{locale_base.nav_photos}}</a></li>
 
             <li class="navigation-item {% if "games" in page %}selected {% endif %}" data-category="games"><a
                     href="/games/ranking">{{locale_base.nav_highscores}}</a></li>
@@ -261,30 +278,30 @@
     </section>
 
     <footer class="footer-container">
-        <div class="footer-copyright">&copy; 2019 {{site.domain}} | <a href="/help/">{{locale_base.footer_helptool}}</a> | <a
+        <div class="footer-copyright">&copy; 2021 {{site.domain}} | <a href="/help/">{{locale_base.footer_helptool}}</a> | <a
                 href="#" class="about-dialog-button">Cosmic</a></div>
     </footer>
 
     {% if player %}
     <div id="hotel-container">
         <div class="client-buttons">
-            <button class="client-close rounded-button blue plain">
+            <button class="client-close rounded-button red plain">
                 <i class="client-icon client-close-icon"></i>
                 <span class="client-close-expand"><span>Web</span></span>
             </button>
-            <button class="client-fullscreen rounded-button blue plain">
+            <button class="client-fullscreen rounded-button red plain">
                 <i class="client-icon client-fullscreen-icon"></i>
                 <i class="client-icon client-fullscreen-icon-back hidden"></i>
             </button>
 
-            <button class="client-count rounded-button blue plain">
+            <button class="client-count rounded-button red plain">
                 {% if 'housekeeping' in permissions %}<a href="/housekeeping" target="_blank"
                     style="color:#fff;text-decoration: none;"><i class="fa fa-user"></i> <b
                         id="count">{{online_count}}</b></a>{% else %}<i class="fa fa-user"></i> <b
                     id="count">{{online_count}}</b>{% endif %}
             </button>
 
-            <button class="client-radio rounded-button blue plain">
+            <button class="client-radio rounded-button red plain">
                 <audio controls id="stream" style="display:none">
                     <source type="audio/mpeg">
                 </audio>
@@ -308,7 +325,7 @@
     <script src="/assets/js/web/loading.js?v=011"></script>
     <script src="/assets/js/pagination.js"></script>
     <script src="/assets/js/jquery.wysibb.js"></script>
-    <script src="/assets/js/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 </body>
 

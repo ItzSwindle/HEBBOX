@@ -34,7 +34,7 @@ class Community
     {
         return QueryBuilder::table('users_currency')->selectDistinct(array('users_currency.user_id', 'users_currency.amount', 'users_currency.type'))
                       ->join('users', 'users_currency.user_id', '=', 'users.id')->where('users_currency.type', $type)
-                      ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->whereNot('website_permissions_ranks.permission_id', '!=', 27)
+                      ->join('website_permissions_ranks', 'users.rank', '=', 'website_permissions_ranks.rank_id')->whereNot('website_permissions_ranks.permission_id', '!=', 40)
                       ->orderBy('users_currency.amount', 'DESC')->limit($limit)->get();
     }
     

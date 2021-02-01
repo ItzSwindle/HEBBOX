@@ -8,6 +8,10 @@
                 <article class="default-section profile-section" style="margin-bottom: 20px;">
                     <div class="background-image">
                         <a href="/hotel" class="rounded-button white plain hotel-button enter-hotel">{{locale.to}} {{site.sitename}}</a>
+						<center>
+				  <!--- <a href="/hotelv2" target="_blank" class="rounded-button red plain hotel-button">{{locale_base.header_to}} Beta {{site.sitename}}</a>  -->
+						</center>
+						<a href="#"  class="about-download-button rounded-button white plain hotel-button enter-hotel">Descargas</a>
                     </div>
                     <div class="profile-content">
                         <div class="header-image">
@@ -22,7 +26,7 @@
                           
                             {% for value in currencys %}
                             <div class="icons" style="background: url(/assets/images/hotel/purses/{{value.type}}-icon.png) no-repeat center center;"></div>
-                            <div style="color: #BA7CC2;">
+                            <div style="color: #5eb3bc;">
                                {{value.amount}}
                             </div>             
                             {% endfor %}
@@ -31,7 +35,7 @@
                 </article>
               
                 <div class="myfriends-online">
-                    <button id="copyReferral" class="form-control" style="width:120px;color: #fff;background-color: #5cb85c;border-color: #4cae4c;margin-right:5px">Referral</button>
+                    <button id="copyReferral" class="form-control" style="width:120px;color: #fff;background-color: #bf0c0c;border-color: #bf0c0c;margin-right:5px">Referidos</button>
                     <input type="text" value="https://{{site.domain}}/registration/{{player.username}}" id="getReferral" class="form-control" style="width: 450px" autocomplete="off" required>
                 </div>
               
@@ -98,7 +102,14 @@
             </div>
           
             <div class="right-side">
-                <article class="default-section">
+			<div class="right-side" style="margin-bottom: 7px;">
+                <aside class="default-section">
+                    <div class="aside-title-content">Hebbox Discord</div>
+                    <div class="aside-content">
+					<iframe src="https://discord.com/widget?id=796931849703784459&theme={% if player %}{{player.template}}{% else %}{% if template %}{{template}}{% else %}light{% endif %}{% endif %}" width="285" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+					</div>
+					</aside>
+	                <article class="default-section">
                     <div class="aside-title-content">{{locale.latest_news}}</div>
                     <div class="aside-desc-content">{{locale.latest_facts}}</div>  
                     <div class="aside-content">

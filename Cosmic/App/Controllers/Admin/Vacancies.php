@@ -27,7 +27,7 @@ class Vacancies
       
         if(!empty($job)) {
             Admin::deleteJob($jobid);
-            response()->json(["status" => "success", "message" => "Vacancies is has been deleted!"]);
+            response()->json(["status" => "success", "message" => "Se han eliminado las vacantes!"]);
         }
     }
   
@@ -52,11 +52,11 @@ class Vacancies
       
         if(!empty($job)) {
             Admin::editJob($jobid, $job_title, $small_description, $full_description);
-            response()->json(["status" => "success", "message" => "Job are edited!"]);
+            response()->json(["status" => "success", "message" => "¡El trabajo está editado!"]);
         }
       
         Admin::addJob($job_title, $small_description, $full_description);
-        response()->json(["status" => "success", "message" => "Job has been added!"]);
+        response()->json(["status" => "success", "message" => "¡Se ha añadido trabajo!"]);
     }
   
     public function accept()
@@ -75,7 +75,7 @@ class Vacancies
       
         if(!empty($job)) {
             Admin::changeJobStatus($jobid);
-            response()->json(["status" => "success", "message" => "Job changed to closed!"]);
+            response()->json(["status" => "success", "message" => "¡Trabajo cambiado a cerrado!"]);
         }
     }
   

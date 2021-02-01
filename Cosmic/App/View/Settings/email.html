@@ -10,16 +10,16 @@
                 <form action="settings/email/validate" method="post">
                     <h4 class="form-subcategory">{{locale.email_title}}</h4>
                     <div class="row">
-                        <input type="email" name="email" class="rounded-input purple-active" value="{{player.email}}" maxlength="72" autofocus required>
+                        <input type="email" name="email" class="rounded-input red-active" value="{{player.email}}" maxlength="72" autofocus required>
                     </div>
                     <div class="form-help">{{locale.email_label}}</div>
 
                     <h4 class="form-subcategory">{{locale.password_title}}</h4>
                     <div class="row">
-                        <input type="password" name="current_password" class="rounded-input purple-active" placeholder="{{locale.fill_password}}" maxlength="32" autocomplete="off" required>
+                        <input type="password" name="current_password" class="rounded-input red-active" placeholder="{{locale.fill_password}}" maxlength="32" autocomplete="off" required>
                     </div>
                     <input type="hidden" name="csrftoken" value="{{csrf_token}}">
-                    <p class="submit-button"><button type="submit" class="rounded-button purple">{{locale.save}}</button></p>
+                    <p class="submit-button"><button type="submit" class="rounded-button red">{{locale.save}}</button></p>
                 </form>
             </article>
         </div>

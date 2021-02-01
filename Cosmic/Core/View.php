@@ -10,8 +10,6 @@ use App\Models\Player;
 use App\Models\Admin;
 
 use Twig\Environment;
-use Twig\Extension\DebugExtension;
-use Twig\Extensions\DateExtension;
 use Twig\Loader\FilesystemLoader;
 
 use Exception;
@@ -58,8 +56,6 @@ class View
                 'debug' => Config::debug
             ));
           
-            $twig->addExtension(new DebugExtension());
-            $twig->addExtension(new DateExtension());
 
             $twig->addGlobal('site', Config::site);
             $twig->addGlobal('client', Config::client);

@@ -2,13 +2,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="actionModalLabel">Action to</h5>
+                <h5 class="modal-title" id="actionModalLabel">Acción para</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-footer">
-                Loading...
+                Cargando...
             </div>
         </div>
     </div>
@@ -26,14 +26,14 @@
                 </div>
             
                 <div class="modal-body">
-                    <p>You are about to delete one track, this procedure is irreversible.</p>
-                    <p>Do you want to proceed?</p>
+                    <p>Está a punto de eliminar una pista, este procedimiento es irreversible.</p>
+                    <p>Quieres proceder?</p>
                     <p class="debug-url"></p>
                 </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger btn-ok" data-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger btn-ok" data-dismiss="modal">Eliminar</button>
                 </div>
             </div>
         </div>
@@ -43,21 +43,21 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="alertModalLabel">Alert User</h5>
+                <h5 class="modal-title" id="alertModalLabel">Alertar al usuario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form method="post" action="remote/alert">
-                    <label class="sr-only" for="inputUsername">Username</label>
+                    <label class="sr-only" for="inputUsername">Usuario</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">@</div>
                         </div>
                         <input type="text" class="form-control" id="inputUsername" name="element" value="" placeholder="Username..." autocomplete="off" autofocus required>
                     </div>
-                    <label class="sr-only" for="inputReason">Reason</label>
+                    <label class="sr-only" for="inputReason">Razón</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <select id="inputReason" name="reason" class="form-control" required>
                             {% for alert in alert_messages %}
@@ -68,15 +68,15 @@
                     <label class="sr-only" for="inputExtra">Extra</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <select id="inputExtra" name="action" class="form-control" required>
-                            <option value="0">None</option>
-                            <option value="1">Disconnect</option>
+                            <option value="0">Ninguna</option>
+                            <option value="1">Desconectar</option>
                             <option value="2">Kick</option>
-                            <option value="3">Mute</option>
+                            <option value="3">Silenciar</option>
                         </select>
                     </div>
                     <input type="hidden" name="object" value="alertuser" />
-                    <button type="submit" class="btn btn-primary mb-2">Alert</button>
-                    <button type="button" class="btn btn-secondary  mb-2" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary mb-2">Alerta</button>
+                    <button type="button" class="btn btn-secondary  mb-2" data-dismiss="modal">Cerrar</button>
                 </form>
             </div>
         </div>
@@ -87,7 +87,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="banModalLabel">Ban User</h5>
+                <h5 class="modal-title" id="banModalLabel">Banear usuario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -95,7 +95,7 @@
 
             <div class="modal-body">
                 <form method="post" action="remote/ban">
-                    <label class="sr-only" for="inputUsername">Username</label>
+                    <label class="sr-only" for="inputUsername">Nomre del usuario</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">@</div>
@@ -108,19 +108,19 @@
                         <select id="inputReason" name="reason" class="form-control" required></select>
                     </div>
 
-                    <label class="sr-only" for="inputTime">Time</label>
+                    <label class="sr-only" for="inputTime">Tiempo</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <select id="inputTime" name="expire" class="form-control" required></select>
                     </div>
 
-                    <label class="sr-only" for="inputType">Type</label>
+                    <label class="sr-only" for="inputType">Tipo</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <select id="inputType" name="type" class="form-control" required>
-                            <option value="user">User</option>
+                            <option value="user">Usuario</option>
                             <option value="ip">IP</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary mb-2">Ban user</button>
+                    <button type="submit" class="btn btn-primary mb-2">Banear usuario</button>
                 </form>
             </div>
         </div>

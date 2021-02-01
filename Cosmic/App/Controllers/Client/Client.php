@@ -32,7 +32,7 @@ class Client
         $reader = new Reader(__DIR__. Config::vpnLocation);
 
         try {
-            $this->record = $reader->asn(request()->getIp());
+            $this->record = $reader->asn(getIpAddress());
         } catch (AddressNotFoundException $e) {
         } catch (InvalidDatabaseException $e) {
         }
@@ -73,7 +73,7 @@ class Client
             $user->deleteMembership();
         }
 
-        View::renderTemplate('Client/client.html', [
+         View::renderTemplate('Client/client.html', [
             'title' => Locale::get('core/title/hotel'),
             'room' => explode("=", url()->getOriginalUrl())[1] ?? null,
             'data'  => $this->data,

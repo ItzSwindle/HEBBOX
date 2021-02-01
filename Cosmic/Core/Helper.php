@@ -43,6 +43,15 @@ function response(): Response
     return Router::response();
 }
 
+function getIpAddress()
+{
+    if(isset(Router::Request()->getHeaders()['http_x_forwarded_for']) && Router::Request()->getHeaders()['http_x_forwarded_for'] !== NULL) {
+        return Router::Request()->getHeaders()['http_x_forwarded_for']; 
+    }
+  
+    return Router::Request()->getHeaders()['remote-addr']; 
+}
+
 /**
  * @return \Pecee\Http\Request
  */

@@ -15,7 +15,7 @@
                             <div class="aside-title-content" style="padding: 0px;padding-bottom: 15px;">{{locale.title}}</div>
                             <div class="row">
                                 <h5>{{locale.email}}</h5>
-                                <input type="email" name="email" class="rounded-input blue-active" placeholder="{{locale.email_fill}}" autocomplete="off" autofocus required>
+                                <input type="email" name="email" class="rounded-input red-active" placeholder="{{locale.email_fill}}" autocomplete="off" autofocus required>
                             </div>
                             <div class="row space-bottom">
                                 <div class="form-help">{{locale.email_help}}</div>
@@ -23,11 +23,11 @@
                             <div class="row">
                                 <div class="column-2">
                                     <h5>{{locale.password}}</h5>
-                                    <input type="password" name="password" class="rounded-input blue-active" placeholder="{{locale.password_fill}}" maxlength="32" autocomplete="off" required>
+                                    <input type="password" name="password" class="rounded-input red-active" placeholder="{{locale.password_fill}}" maxlength="32" autocomplete="off" required>
                                 </div>
                                 <div class="column-2">
                                     <h5>{{locale.password_repeat}}</h5>
-                                    <input type="password" name="password_repeat" class="rounded-input blue-active" placeholder="{{locale.password_repeat_fill}}" maxlength="32" autocomplete="off" required>
+                                    <input type="password" name="password_repeat" class="rounded-input red-active" placeholder="{{locale.password_repeat_fill}}" maxlength="32" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="row space-bottom">
@@ -162,7 +162,7 @@
                             {% if referral %}
                             <div class="row">
                                 <h5>Your referral:</h5>
-                                <input type="text" name="referral" class="rounded-input blue-active" value="{{referral.username}}" readonly>
+                                <input type="text" name="referral" class="rounded-input red-active" value="{{referral.username}}" readonly>
                             </div>
                             {% endif %}
                         </div>
@@ -170,7 +170,7 @@
                             <div class="aside-title-content" style="padding: 0px;padding-bottom: 15px;">{{locale.create_user}}</div>
                             <div class="row">
                                 <h5>{{locale.username}}</h5>
-                                <input type="text" name="username" class="rounded-input blue-active username" placeholder="{{locale.username_fill}}" maxlength="15" autocomplete="off" required>
+                                <input type="text" name="username" class="rounded-input red-active username" placeholder="{{locale.username_fill}}" maxlength="15" autocomplete="off" required>
                             </div>
                             <div class="row space-bottom">
                                 <div class="form-help">{{locale.username_help}}</div>
@@ -206,7 +206,7 @@
                         </div>
                     </div>
                      <input type="hidden" name="csrftoken" value="{{csrf_token}}">
-                    <p style="text-align: center; margin-top: 30px; padding-bottom: 30px;"><button type="submit" class="rounded-button blue plain submit-form default-prevent" id="registration-recaptcha">{{locale.register}}</button></p>
+                    <p style="text-align: center; margin-top: 30px; padding-bottom: 30px;"><button type="submit" class="rounded-button red plain submit-form default-prevent" id="registration-recaptcha">{{locale.register}}</button></p>
                 </form>
             </article>
 

@@ -12,19 +12,24 @@ class Config
     /* Example external_base: = 'gordon/PRODUCTION-201904011212-888653470' */
     
     const client = array(
-      'external_override_variables' => 'gamedata/override/external_override_variables.txt?v=4',
-      'external_override_texts'     => 'gamedata/override/external_flash_override_texts.txt?v=9',
-      'external_variables'          => 'gamedata/external_variables.txt?v=11',
+      'external_override_variables' => 'gamedata/override/external_override_variables.txt',
+      'external_override_texts'     => 'gamedata/override/external_flash_override_texts.txt',
+      'external_variables'          => 'gamedata/external_variables.txt',
       'external_texts'              => 'gamedata/external_flash_texts.txt',
-      'external_figurepartlist'     => 'gamedata/figuredata.xml',
-      'external_figuremap'          => 'gordon/PRODUCTION-201904011212-888653470/figuremap.xml',
+      'external_figurepartlist'     => 'gamedata/figuredata.xml?ghf',
+      'external_figuremap'          => 'gamedata/figuremap.xml?gfh',
       'external_productdata'        => 'gamedata/productdata.txt',
-      'external_figuredata'         => 'gamedata/furnidata.xml?v=5',
-      'external_base'               => 'gordon/PRODUCTION-201904011212-888653470',
-      'client_swf'                  => 'Habbo.swf',
-      'client_radio'                => 'https://21253.live.streamtheworld.com/WEB16_AAC.aac',
-      'client_host'                 => '151.80.54.177',
-      'client_port'                 => 3000
+      'external_figuredata'         => 'gamedata/furnidata.xml?gfh',
+      'external_base'               => 'gordon/PRODUCTION',
+      'client_swf'                  => 'hebboxv2.swf',
+      'client_radio'                => 'http://node-30.zeno.fm/un2vw3efmzzuv?rj-ttl=5&rj-tok=AAABd0IrRTcAcqe_NGWZxb92XA',
+      'client_host'                 => 'proxie.hebbox.es',
+      'client_port'                 => 3000,
+      'nitro_runtime'               => 'runtime.js',
+      'nitro_polyfills'             => 'polyfills.js',
+      'nitro_vendor'                => 'vendor.js',
+      'nitro_main'                  => 'main.js',
+      'nitro_styles'                => 'styles.css'
     );
   
     /**
@@ -34,14 +39,14 @@ class Config
      */
 
     const site = array(
-      'domain'      => 'cosmicproject.online',
-      'cpath'       => 'https://images.projectmeteor.online',
+      'domain'      => 'hebbox.es',
+      'cpath'       => 'https://swf.hebbox.es/swf',
       'fpath'       => 'https://habbo.com.br/habbo-imaging',
-      'shortname'   => 'Cosmic',
-      'sitename'    => 'Cosmic'
+      'shortname'   => 'HX',
+      'sitename'    => 'Hebbox'
     );
       
-    const language = 'EN';
+    const language = 'ES';
     const region = 'Europe/Amsterdam';
   
     const SECRET_TOKEN = 'COSMIC-shdl3w5rvb4ef141spbed';

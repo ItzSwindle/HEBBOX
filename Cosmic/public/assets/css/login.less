@@ -160,6 +160,58 @@ input:-webkit-autofill{
     margin: 0 10px;
 }
 
+/* download popup */
+.download-popup{
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    color: #000;
+    border-radius: 7px;
+    position: relative;
+    padding: 22px;
+    width: auto;
+    max-width: 450px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.download-popup .mfp-close{
+    color: #fff;
+    top: 5px;
+    right: 7px;
+    opacity: 1;
+}
+
+.download-popup h3{
+    margin: -22px -22px 22px;
+    color: #fff;
+    padding: 13px 22px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.download-popup.confirm-popup h3{
+    background-color: #f46048;
+}
+
+.download-popup.cancel-popup h3{
+    background-color: #47aeec;
+}
+
+.download-popup.default-popup h3{
+    background-color: #33c8f3;
+}
+
+.download-popup .buttons-container{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.download-popup .buttons-container .rounded-button{
+    display: inline-block;
+    margin: 0 10px;
+}
 /* Loading screen */
 .loading-container{
     color: #fff;

@@ -6,13 +6,13 @@
     <div class="left-side">
         {% if player %}
         <h4>
-            My Groups forums
+            Foros de Mis grupos
         </h4>
       
         {% if forums is empty %}
             <article class="default-section">
                 <div style="padding: 15px;">
-                   You are not yet a member of one of our groups
+                   Aún no eres miembro de uno de nuestros grupos
                 </div>
             </article>
         {% endif %}
@@ -30,13 +30,13 @@
         {% endif %}
 
         <h4>
-            Public Groups forums
+            Foros de grupos públicos
         </h4>
       
         {% if public is empty %}
             <article class="default-section">
                 <div style="padding: 15px;">
-                    Er zijn nog geen groepen aangemaakt!
+                    ¡Aún no se han creado grupos!
                 </div>
             </article>
         {% endif %}
@@ -67,7 +67,7 @@
                         <div class="related-article-thumbnail" style="background-image: url({{site.fpath}}/avatarimage?figure={{post.author.look}}&headonly=1&direction=2&head_direction=2&action=&gesture=&size=m); margin-top: -5px;" class="pixelated small-head"></div>
                         <div class="related-article-details">
                             <div class="related-article-title">{{post.subject}}</div>
-                            <div class="related-article-date">{{post.created_at|time_diff}} {{locale.index_by}} <b>{{post.author.username}}</b></div>
+                            <div class="related-article-date">{{post.created_at}} {{locale.index_by}} <b>{{post.author.username}}</b></div>
                         </div>
                     </a>
                     {% endfor %}

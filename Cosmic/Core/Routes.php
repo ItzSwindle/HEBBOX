@@ -77,7 +77,10 @@ class Routes extends Router
 
                 Router::get('/logout', 'Home\Login@logout');
                 Router::get('/hotel', 'Client\Client@hotel');
+				Router::get('/hotelv2', 'Nitro\Nitro@client');
                 Router::get('/client', 'Client\Client@client');
+				Router::get('/nitro', 'Nitro\Nitro@client');
+				
 
                 Router::get('/settings', 'Settings\Preferences@index');
                 Router::get('/settings/email', 'Settings\Email@index');
@@ -125,6 +128,13 @@ class Routes extends Router
                 Router::get('/community/photos', 'Community\Photos@index');
                 Router::get('/community/staff', 'Community\Staff@index');
                 Router::get('/community/team', 'Community\Staff@team');
+				Router::get('/community/coordinators', 'Community\Staff@coordinators');
+				Router::get('/community/dptsm', 'Community\Staff@dptsm');
+				Router::get('/community/ibaw', 'Community\Staff@ibaw');
+				Router::get('/community/mk', 'Community\Staff@mk');
+				Router::get('/community/gm', 'Community\Staff@gm');
+				Router::get('/community/eco', 'Community\Staff@eco');
+
 
                 Router::get('/community/fansites', 'Community\Fansites@index');
 
