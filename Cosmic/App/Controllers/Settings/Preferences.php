@@ -20,7 +20,8 @@ class Preferences
             'block_roominvites',
             'old_chat',
             'block_alerts',
-            'themeswitch'
+            'themeswitch',
+			'habboswf'
         );
 
         $column = input('post');
@@ -35,6 +36,14 @@ class Preferences
           
             Player::update(request()->player->id, ['template' =>  $skin]);
             setcookie("template", $skin, strtotime( '+30 days' ), "/"); 
+          
+            response()->json(["status" => "success", "location" => "/settings"]);
+        }
+		
+		if($column == "habboswf") {
+            $skin = (request()->player->habboswf == "hebbox") ? "habbo" : "hebbox";
+          
+            Player::update(request()->player->id, ['habboswf' =>  $skin]);
           
             response()->json(["status" => "success", "location" => "/settings"]);
         }
