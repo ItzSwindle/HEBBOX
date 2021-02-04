@@ -62,7 +62,7 @@
                 window.location = signoutUrl;
         };
 
-        swfobject.embedSWF('{{site.cpath}}/{{client.external_base}}/{{client.client_swf}}', 'flash-container', '100%', '100%', '11.1.0', '{{path}}/assets/flash/expressInstall.swf', flashvars, params, null, null);
+        swfobject.embedSWF('{{site.cpath}}/{{client.external_base}}/{% if player %}{{player.habboswf}}{% else %}{% if habboswf %}{{habboswf}}{% else %}hebbox{% endif %}{% endif %}.swf', 'flash-container', '100%', '100%', '11.1.0', '{{path}}/assets/flash/expressInstall.swf', flashvars, params, null, null);
     </script>
 
       <style>body{margin:0;background:#000;color:#7ecaee;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font-family:Ubuntu,"Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;font-size:16px;font-variant-ligatures:common-ligatures;line-height:1.4;min-height:100vh;}.client-error{max-width:480px;}.client-error__title{text-align:center;}.client-error__flash{background-image:url('/web/client/flash/flashplayer.png');display:inline-block;height:39px;margin:12px 12px 0;width:158px;}h1,h2,h3,h4,h5,h6{color:#fff;font-family:"Ubuntu Condensed","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;font-weight:400;margin:.6em 0;line-height:1.2;}h1,h2,h3,h4,h5{text-transform:uppercase;}p{margin:.75em 0;}a{color:#fff;cursor:pointer;outline:0;text-decoration:none;}</style>
