@@ -52,7 +52,7 @@ class Remote
         $this->data->user->id           = $this->user->id;
         $this->data->user->username     = $this->user->username;
         $this->data->user->rank_id      = $this->user->rank;
-        $this->data->user->tarea    	= 	$this->user->tarea;
+        $this->data->user->extra_rank   = $this->user->extra_rank;
         $this->data->user->mail         = $this->user->mail;
         $this->data->user->motto        = Helper::filterString($this->user->motto);
         $this->data->user->credits      = $this->user->credits;
@@ -283,9 +283,13 @@ class Remote
     protected function getChatLogs($player_id)
     {
         $this->data->chatlogs = Admin::getChatLogs($player_id);
-      
+        
         foreach ($this->data->chatlogs as $logs) {
-          
+            
+            if(!isset($logs->user_to_id)) {
+               $logs->user_to_id = "deleted";   
+            }
+            
             $logs->message = Helper::filterString($logs->message);
             $logs->timestamp = date("d-m-Y H:i:s", $logs->timestamp);
           
@@ -367,7 +371,7 @@ class Remote
         $motto = (input()->post('motto')->value ? input()->post('motto')->value : $player->motto);
         $rank = (input()->post('rank')->value ? input()->post('rank')->value : (string)$player->rank);
         $credits = (input()->post('credits')->value ? input()->post('credits')->value : (string)$player->credits);
-        $tarea = (input()->post('tarea')->value ? input()->post('tarea')->value : $player->tarea);
+        $extra_rank = (input()->post('extra_rank')->value ? input()->post('extra_rank')->value : null);
       
         $currencys = Player::getCurrencys($player->id);
         foreach($currencys as $currency) {
@@ -403,7 +407,7 @@ class Remote
             }
         }
         
-        if (Admin::changePlayerSettings($email ?? $player->mail, $motto, $pin_code, $player->id, $tarea)) {
+        if (Admin::changePlayerSettings($email ?? $player->mail, $motto, $pin_code, $player->id, $extra_rank)) {
 
             if($player->credits != $credits) {
                 HotelApi::execute('givecredits', ['user_id' => $player->id, 'credits' => - $player->credits + $credits]);
